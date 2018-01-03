@@ -1,0 +1,25 @@
+.floor{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  border: 2px solid grey;
+  background-color: white;
+  height: 500px;
+  width: 550px;
+  top: 100px;
+  left: 250px;
+
+  position: relative;
+}
+
+.toolbar{
+  position: absolute;
+  left: 500px;
+  top:50px;
+}
+
+.floorName{
+
+}

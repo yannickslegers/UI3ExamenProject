@@ -1,0 +1,17 @@
+<button class="room"
+        [style.height.px]="room.height"
+        [style.width.px]="room.width"
+        [style.left.px]="room.posX"
+        [style.top.px]="room.posY"
+        [style.background-color]= 'getRoomColor()'
+        (click)="openDialog(room)">
+  <div class="details"
+       [style.height.px]="room.height"
+       [style.width.px]="room.width">
+    <div class="itemRight">
+      <p >{{room?.roomName}}</p>
+      <p *ngIf="options.showTemperature">{{room?.temp}}°C</p>
+      <mat-icon class={{getMusic()}}></mat-icon>
+    </div>
+  </div>
+</button>

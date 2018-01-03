@@ -1,0 +1,21 @@
+<!--
+<section class="toolbar">
+  <app-toolbar
+    [floorName] = "floorName"
+    (previous)="previousFloor()"
+    (next)="nextFloor()">
+  </app-toolbar>
+</section>
+-->
+<section class="toolbar">
+  <div>
+    <button [routerLink] = "['/domotica/floor', previousFloor()]"><</button>
+    <span class="floorName">{{floorName}}</span>
+    <button [routerLink] = "['/domotica/floor', nextFloor()]">></button>
+  </div>
+</section>
+<section class="floor">
+  <app-room *ngFor="let room of rooms"
+            [room] = "room"
+  ></app-room>
+</section>
