@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Room} from '../../model/room';
 import {Floor} from '../../model/floor';
 import {RoomService} from '../../services/room.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-floor',
@@ -10,15 +10,12 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./floor.component.css']
 })
 export class FloorComponent implements OnInit {
-  // private rooms: Room[] = [];  --> gaf errors in log
   private rooms: Room[] = [];
   private currentFloor: Floor;
-  // private floors: Floor[];  --> gaf errors in log
   private floors: Floor[] = [];
-  // private floorName: string;  --> gaf errors in log
   private floorName = '';
 
-  constructor(private roomService: RoomService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private roomService: RoomService, private route: ActivatedRoute) { }
 
 
   ngOnInit() {
@@ -57,7 +54,6 @@ export class FloorComponent implements OnInit {
         }
       }
     }
-    // this.setFloor(floorNr);
     return floorNr;
   }
 
@@ -72,7 +68,6 @@ export class FloorComponent implements OnInit {
         }
       }
     }
-    // this.setFloor(floorNr);
     return floorNr;
   }
 }

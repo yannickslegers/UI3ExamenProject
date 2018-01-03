@@ -43,7 +43,7 @@
 
         <br>
         <div>
-          <a>Blindings</a>
+          <a>Blinding</a>
           <mat-slide-toggle
             [(ngModel)]="test.blinding"
           ></mat-slide-toggle>
@@ -75,56 +75,3 @@
     <button mat-raised-button mat-dialog-close (click)="thisDialogRef.close('cancel')">Cancel</button>
   </mat-dialog-actions>
 </div>
-
-<!--
-<form [formGroup]="form" (ngSubmit)="onConfirm(form)">
-  <h2 mat-dialog-title><strong>Settings</strong> - {{data?.roomName}}</h2>
-  <hr>
-  <mat-dialog-content>
-    <mat-form-field>
-      <div>
-        <a>Temperature</a>
-        <mat-slider
-          [thumb-label]="true"
-          [max]="30"
-          [min]="0"
-          [step]="1"
-          [value]="data.temp"
-        ></mat-slider>
-      </div>
-
-      <br>
-      <div>
-        <a>Brightness</a>
-        <mat-slider
-          [thumb-label]="true"
-          [max]="50"
-          [min]="0"
-          [step]="1"
-          [(ngModel)]="data.light"
-        ></mat-slider>
-      </div>
-
-      <br>
-      <div>
-        <a>Volume</a>
-        <mat-slider
-          [thumb-label]="true"
-          [max]="50"
-          [min]="0"
-          [step]="1"
-          [(ngModel)]="data.music"
-        ></mat-slider>
-      </div>
-
-      <br>
-      <div>
-        <a>Blindings</a>
-        <mat-slide-toggle
-          [(ngModel)]="data.blinding"
-        ></mat-slide-toggle>
-      </div>
-    </mat-form-field>
-  </mat-dialog-content>
-</form>
--->

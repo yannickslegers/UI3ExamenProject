@@ -8,7 +8,7 @@ import {Room} from '../../model/room';
   templateUrl: './room.component.html',
   styleUrls: ['./room.component.css']
 })
-export class RoomComponent implements OnInit {
+export class RoomComponent {
   // TODO: private
   dialogResult = '';
 
@@ -19,13 +19,8 @@ export class RoomComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
-  // TODO: kan weg (interface ook weg doen)
-  ngOnInit() {
-  }
-
   openDialog() {
-    // TODO: const dialogRef = this.dialog.open(MyDialogComponent, {
-    let dialogRef = this.dialog.open(MyDialogComponent, {
+    const dialogRef = this.dialog.open(MyDialogComponent, {
       width: '600px',
       data: this.room
     });
