@@ -25,19 +25,19 @@ export class MyDialogComponent implements OnInit {
   // }
 
   getRoomColor(): string {
-    if ( this.data.blinding === true) {
+    if ( this.test.blinding === true) {
       return 'grey';
     }
-    if (this.data.light === 0) {
+    if (this.test.light === 0) {
       return 'white';
     } else {
-      return 'rgba(255,255,0,' + this.data.light * 2 / 100 + ')';
+      return 'rgba(255,255,0,' + this.test.light * 2 / 100 + ')';
     }
   }
 
   getMusic(): string {
     let musicIcon;
-    if (this.data.music === 0) {
+    if (this.test.music === 0) {
       musicIcon = 'fa fa-volume-off';
     } else {
       musicIcon = 'fa fa-volume-up';

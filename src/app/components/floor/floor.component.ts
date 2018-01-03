@@ -10,10 +10,13 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./floor.component.css']
 })
 export class FloorComponent implements OnInit {
-  private rooms: Room[];
+  // private rooms: Room[] = [];  --> gaf errors in log
+  private rooms: Room[] = [];
   private currentFloor: Floor;
-  private floors: Floor[];
-  private floorName: string;
+  // private floors: Floor[];  --> gaf errors in log
+  private floors: Floor[] = [];
+  // private floorName: string;  --> gaf errors in log
+  private floorName = '';
 
   constructor(private roomService: RoomService, private router: Router, private route: ActivatedRoute) { }
 
