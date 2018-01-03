@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {Router} from '@angular/router';
+import {Room} from "../../model/room";
 
 @Component({
   selector: 'app-room-detail',
@@ -8,17 +9,20 @@ import {Router} from '@angular/router';
   styleUrls: ['./roomDetail.component.css']
 })
 export class MyDialogComponent implements OnInit {
-
+  test: Room = null;
   constructor(public thisDialogRef: MatDialogRef<MyDialogComponent>, @Inject(MAT_DIALOG_DATA) private data, private router: Router) {
     thisDialogRef.disableClose = true;
   }
 
+
   ngOnInit() {
+    this.test = new Room(this.data);
   }
 
-  onConfirm() {
-    this.thisDialogRef.close('Confirm');
-  }
+  // TODO: kan weg
+  // onConfirm() {
+  //   this.thisDialogRef.close('Confirm');
+  // }
 
   getRoomColor(): string {
     if ( this.data.blinding === true) {

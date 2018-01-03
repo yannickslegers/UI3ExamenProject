@@ -9,7 +9,7 @@ import {Room} from '../../model/room';
   styleUrls: ['./room.component.css']
 })
 export class RoomComponent implements OnInit {
-
+  // TODO: private
   dialogResult = '';
 
   @Input() public room: Room = {id: 0, height: 0, width: 0, posX: 0, posY: 0, light: 0, music: 0, temp: 0, roomName: '', blinding : false};
@@ -19,18 +19,22 @@ export class RoomComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
+  // TODO: kan weg (interface ook weg doen)
   ngOnInit() {
   }
 
   openDialog() {
-      let dialogRef = this.dialog.open(MyDialogComponent, {
+    // TODO: const dialogRef = this.dialog.open(MyDialogComponent, {
+    let dialogRef = this.dialog.open(MyDialogComponent, {
       width: '600px',
       data: this.room
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('Dialog closed ${result}');
-      this.dialogResult = result;
+      console.log('Dialog closed ' + result);
+      if (result && result !== 'cancel') {
+        this.room = result;
+      }
     });
   }
 

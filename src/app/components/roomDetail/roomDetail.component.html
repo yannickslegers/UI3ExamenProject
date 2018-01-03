@@ -1,5 +1,5 @@
 <div>
-  <h2 mat-dialog-title><strong>Settings</strong> - {{data?.roomName}}</h2>
+  <h2 mat-dialog-title><strong>Settings</strong> - {{test?.roomName}}</h2>
   <hr>
   <mat-dialog-content>
     <br>
@@ -13,7 +13,7 @@
             [max]="30"
             [min]="0"
             [step]="1"
-            [(ngModel)]="data.temp"
+            [(ngModel)]="test.temp"
           ></mat-slider>
         </div>
 
@@ -25,7 +25,7 @@
             [max]="50"
             [min]="0"
             [step]="1"
-            [(ngModel)]="data.light"
+            [(ngModel)]="test.light"
           ></mat-slider>
         </div>
 
@@ -37,7 +37,7 @@
             [max]="50"
             [min]="0"
             [step]="1"
-            [(ngModel)]="data.music"
+            [(ngModel)]="test.music"
           ></mat-slider>
         </div>
 
@@ -45,24 +45,24 @@
         <div>
           <a>Blindings</a>
           <mat-slide-toggle
-            [(ngModel)]="data.blinding"
+            [(ngModel)]="test.blinding"
           ></mat-slide-toggle>
         </div>
 
       </div>
       <div class="roomModel">
         <div class="room"
-                [style.height.px]="data.height"
-                [style.width.px]="data.width"
-                [style.left.px]="data.posX"
-                [style.top.px]="data.posY"
+                [style.height.px]="test.height"
+                [style.width.px]="test.width"
+                [style.left.px]="test.posX"
+                [style.top.px]="test.posY"
                 [style.background-color]= 'getRoomColor()'>
           <div class="details"
-               [style.height.px]="data.height"
-               [style.width.px]="data.width">
+               [style.height.px]="test.height"
+               [style.width.px]="test.width">
             <div class="itemRight">
-              <p>{{data.roomName}}</p>
-              <p>{{data.temp}}°C</p>
+              <p>{{test.roomName}}</p>
+              <p>{{test.temp}}°C</p>
               <mat-icon class="{{getMusic()}}"></mat-icon>
             </div>
           </div>
@@ -71,8 +71,8 @@
     </div>
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button mat-raised-button (click)="onConfirm()">Save</button>
-    <button mat-raised-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button (click)="thisDialogRef.close(test)">Save</button>
+    <button mat-raised-button mat-dialog-close (click)="thisDialogRef.close('cancel')">Cancel</button>
   </mat-dialog-actions>
 </div>
 
