@@ -31,7 +31,7 @@
 -->
 
 <ng-container>
-  <mat-toolbar color="primary">
+  <mat-toolbar class="header" color="primary">
     <p><button mat-button (click)="sidenav.toggle()">Settings</button></p>
     <div>
       <button [routerLink] = "['/domotica/floor', previousFloor()]"><</button>
@@ -40,13 +40,12 @@
     </div>
   </mat-toolbar>
 
-  <mat-sidenav-container>
+  <mat-sidenav-container class="floor-container">
 
     <mat-sidenav #sidenav mode="over" class="settings-sidenav"
                  [fixedInViewport]="false">
-      <p><button mat-button (click)="sidenav.toggle()">Close</button></p>
 
-      <!-- app-settings -->
+      <app-settings></app-settings>
 
     </mat-sidenav>
 
@@ -61,7 +60,7 @@
   </mat-sidenav-container>
 
 
-  <mat-toolbar color="primary">
+  <mat-toolbar class="footer" color="primary">
     Footer
   </mat-toolbar>
 </ng-container>
