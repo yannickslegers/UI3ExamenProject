@@ -1,5 +1,5 @@
 <div>
-  <h2 mat-dialog-title><strong>Settings</strong> - {{test?.roomName}}</h2>
+  <h2 mat-dialog-title><strong>Settings</strong> - {{room?.roomName}}</h2>
   <hr>
   <mat-dialog-content>
     <br>
@@ -13,9 +13,10 @@
             [max]="30"
             [min]="0"
             [step]="1"
-            [(ngModel)]="test.temp"
+            [(ngModel)]="room.temp"
+            [disabled]="!settings.showTemperature"
           ></mat-slider>
-          <a>{{test.temp}}</a>
+          <a>{{room.temp}}</a>
         </div>
 
         <br>
@@ -26,9 +27,10 @@
             [max]="50"
             [min]="0"
             [step]="1"
-            [(ngModel)]="test.light"
+            [(ngModel)]="room.light"
+            [disabled]="!settings.showBlinding"
           ></mat-slider>
-          <a>{{test.light}}</a>
+          <a>{{room.light}}</a>
         </div>
 
         <br>
@@ -39,34 +41,36 @@
             [max]="50"
             [min]="0"
             [step]="1"
-            [(ngModel)]="test.music"
+            [(ngModel)]="room.music"
+            [disabled]="!settings.showMusic"
           ></mat-slider>
-          <a>{{test.music}}</a>
+          <a>{{room.music}}</a>
         </div>
 
         <br>
         <div>
           <a>Blinding</a>
           <mat-slide-toggle
-            [(ngModel)]="test.blinding"
+            [(ngModel)]="room.blinding"
+            [disabled]="!settings.showBlinding"
           ></mat-slide-toggle>
         </div>
 
       </div>
       <div class="roomModel">
         <div class="room"
-                [style.height.px]="test.height"
-                [style.width.px]="test.width"
-                [style.left.px]="test.posX"
-                [style.top.px]="test.posY"
+                [style.height.px]="room.height"
+                [style.width.px]="room.width"
+                [style.left.px]="room.posX"
+                [style.top.px]="room.posY"
                 [style.background-color]= 'getRoomColor()'>
           <div class="details"
-               [style.height.px]="test.height"
-               [style.width.px]="test.width">
+               [style.height.px]="room.height"
+               [style.width.px]="room.width">
             <div class="itemRight">
-              <p>{{test.roomName}}</p>
-              <p>{{test.temp}}°C</p>
-              <mat-icon class="{{getMusic()}}"></mat-icon>
+              <p>{{room.roomName}}</p>
+              <p *ngIf="settings.showTemperature">{{room.temp}}°C</p>
+              <mat-icon *ngIf="settings.showMusic" class="{{getMusic()}}"></mat-icon>
             </div>
           </div>
         </div>
@@ -74,7 +78,7 @@
     </div>
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button mat-raised-button (click)="thisDialogRef.close(test)">Save</button>
+    <button mat-raised-button (click)="thisDialogRef.close(room)">Save</button>
     <button mat-raised-button mat-dialog-close (click)="thisDialogRef.close('cancel')">Cancel</button>
   </mat-dialog-actions>
 </div>

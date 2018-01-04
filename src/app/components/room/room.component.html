@@ -10,8 +10,8 @@
        [style.width.px]="room.width">
     <div class="itemRight">
       <p >{{room?.roomName}}</p>
-      <p *ngIf="options.showTemperature">{{room?.temp}}°C</p>
-      <mat-icon class={{getMusic()}}></mat-icon>
+      <p *ngIf="showTemperature">{{room?.temp}}°C</p>
+      <mat-icon *ngIf="showMusic" class={{getMusic()}}></mat-icon>
     </div>
   </div>
 </button>

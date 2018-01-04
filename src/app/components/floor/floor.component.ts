@@ -15,6 +15,12 @@ export class FloorComponent implements OnInit {
   private floors: Floor[] = [];
   private floorName = '';
 
+  private showTemperature = true;
+  private showMusic = true;
+  private showLight = true;
+  private showBlinding = true;
+  private showOutsideTemperature = true;
+
   constructor(private roomService: RoomService, private route: ActivatedRoute) { }
 
 
@@ -69,5 +75,25 @@ export class FloorComponent implements OnInit {
       }
     }
     return floorNr;
+  }
+
+  changeShowTemperature(){
+    this.showTemperature = !this.showTemperature;
+  }
+
+  changeShowMusic(){
+    this.showMusic = !this.showMusic;
+  }
+
+  changeShowLight(){
+    this.showLight = !this.showLight;
+  }
+
+  changeShowBlinding(){
+    this.showBlinding = !this.showBlinding;
+  }
+
+  changeShowOutsideTemperature(){
+    this.showOutsideTemperature = !this.showOutsideTemperature;
   }
 }

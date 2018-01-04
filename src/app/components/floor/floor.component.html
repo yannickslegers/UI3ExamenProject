@@ -45,7 +45,13 @@
     <mat-sidenav #sidenav mode="over" class="settings-sidenav"
                  [fixedInViewport]="false">
 
-      <app-settings></app-settings>
+      <app-settings
+        (showTemperature)="changeShowTemperature()"
+        (showMusic)="changeShowMusic()"
+        (showBlinding)="changeShowBlinding()"
+        (showLight)="changeShowLight()"
+        (showOutsideTemperature)="changeShowOutsideTemperature()"
+      ></app-settings>
 
     </mat-sidenav>
 
@@ -53,6 +59,10 @@
       <section class="floor">
         <app-room *ngFor="let room of rooms"
                   [room] = "room"
+                  [showTemperature]="showTemperature"
+                  [showMusic]="showMusic"
+                  [showBlinding]="showBlinding"
+                  [showLight]="showLight"
         ></app-room>
       </section>
     </mat-sidenav-content>

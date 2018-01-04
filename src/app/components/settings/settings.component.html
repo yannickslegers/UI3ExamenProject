@@ -2,12 +2,14 @@
   <p>Within these settings it is possible to choose
     which functions you want to be enables/disabled.</p>
   <br>
-  <mat-slide-toggle>Music volume</mat-slide-toggle>
+  <mat-slide-toggle (change)="showMusic.emit($event)" [checked]="true">Music volume</mat-slide-toggle>
   <br>
-  <mat-slide-toggle>Light brightness</mat-slide-toggle>
+  <mat-slide-toggle (change)="showLight.emit($event)" [checked]="true">Light brightness</mat-slide-toggle>
   <br>
-  <mat-slide-toggle>Room temperature</mat-slide-toggle>
+  <mat-slide-toggle (change)="showTemperature.emit($event)" [checked]="true">Room temperature</mat-slide-toggle>
   <br>
-  <mat-slide-toggle>Window blinding's</mat-slide-toggle>
+  <mat-slide-toggle (change)="showBlinding.emit($event)" [checked]="true">Window blinding's</mat-slide-toggle>
+  <br>
+  <mat-slide-toggle (change)="showOutsideTemperature.emit($event)" [checked]="true">Weather outside</mat-slide-toggle>
   <br>
 </div>
