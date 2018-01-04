@@ -2,85 +2,6 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    const rooms = [
-      {
-        'id': 1,
-        'roomName': 'Keuken',
-        'height': 250,
-        'width': 150,
-        'posX': 0,
-        'posY': 0,
-        'light': 25,
-        'music': 25,
-        'temp': 21
-      },
-      {
-        'id': 2,
-        'roomName': 'Garage',
-        'height': 250,
-        'width': 150,
-        'posX': 0,
-        'posY': 250,
-        'light': 50,
-        'music': 0,
-        'temp': 0
-      },
-      {
-        'id': 3,
-        'roomName': 'Eetkamer',
-        'height': 175,
-        'width': 250,
-        'posX': 150,
-        'posY': 0,
-        'light': 0,
-        'music': 0,
-        'temp': 0
-      },
-      {
-        'id': 4,
-        'roomName': 'Living',
-        'height': 325,
-        'width': 250,
-        'posX': 150,
-        'posY': 175,
-        'light': 0,
-        'music': 0,
-        'temp': 0
-      },
-      {
-        'id': 5,
-        'roomName': 'Veranda',
-        'height': 175,
-        'width': 150,
-        'posX': 400,
-        'posY': 0,
-        'light': 0,
-        'music': 0,
-        'temp': 0
-      },
-      {
-        'id': 6,
-        'roomName': 'Bureau',
-        'height': 150,
-        'width': 150,
-        'posX': 400,
-        'posY': 175,
-        'light': 0,
-        'music': 0,
-        'temp': 0
-      },
-      {
-        'id': 7,
-        'roomName': 'Hal',
-        'height': 175,
-        'width': 100,
-        'posX': 400,
-        'posY': 325,
-        'light': 0,
-        'music': 0,
-        'temp': 0
-      }
-    ];
 
     const floors = [
       {
@@ -163,7 +84,7 @@ export class InMemoryDataService implements InMemoryDbService {
             'id': 7,
             'roomName': 'Hall',
             'height': 175,
-            'width': 100,
+            'width': 150,
             'posX': 400,
             'posY': 325,
             'light': 0,
@@ -176,16 +97,185 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         'id' : 1,
         'floorName' : 'First Floor',
-        'rooms' : []
+        'rooms' : [
+          {
+            'id': 8,
+            'roomName': 'Bedroom 1',
+            'height': 250,
+            'width': 250,
+            'posX': 0,
+            'posY': 0,
+            'light': 0,
+            'music': 0,
+            'temp': 21,
+            'blinding' : false
+          },
+          {
+            'id': 9,
+            'roomName': 'Bedroom 2',
+            'height': 250,
+            'width': 250,
+            'posX': 0,
+            'posY': 250,
+            'light': 0,
+            'music': 0,
+            'temp': 21,
+            'blinding' : false
+          },
+          {
+            'id': 10,
+            'roomName': 'Toilet',
+            'height': 100,
+            'width': 100,
+            'posX': 250,
+            'posY': 0,
+            'light': 0,
+            'music': 0,
+            'temp': 21,
+            'blinding' : false
+          },
+          {
+            'id': 11,
+            'roomName': 'Hallway 1',
+            'height': 300,
+            'width': 100,
+            'posX': 250,
+            'posY': 100,
+            'light': 0,
+            'music': 0,
+            'temp': 21,
+            'blinding' : false
+          },
+          {
+            'id': 12,
+            'roomName': 'Hallway 2',
+            'height': 100,
+            'width': 200,
+            'posX': 250,
+            'posY': 400,
+            'light': 0,
+            'music': 0,
+            'temp': 21,
+            'blinding' : false
+          },
+          {
+            'id': 13,
+            'roomName': 'Bedroom 3',
+            'height': 200,
+            'width': 200,
+            'posX': 350,
+            'posY': 0,
+            'light': 0,
+            'music': 0,
+            'temp': 21,
+            'blinding' : false
+          },
+          {
+            'id': 14,
+            'roomName': 'Bathroom 1',
+            'height': 200,
+            'width': 200,
+            'posX': 350,
+            'posY': 200,
+            'light': 0,
+            'music': 0,
+            'temp': 21,
+            'blinding' : false
+          },
+          {
+            'id': 15,
+            'roomName': 'Stairs 1',
+            'height': 100,
+            'width': 100,
+            'posX': 450,
+            'posY': 400,
+            'light': 0,
+            'music': 0,
+            'temp': 21,
+            'blinding' : false
+          }
+        ]
       },
       {
         'id' : 2,
         'floorName' : 'Attic',
-        'rooms' : []
+        'rooms' : [
+          {
+            'id': 16,
+            'roomName': 'Dressing',
+            'height': 150,
+            'width': 150,
+            'posX': 0,
+            'posY': 0,
+            'light': 0,
+            'music': 0,
+            'temp': 21,
+            'blinding' : false
+          },
+          {
+            'id': 17,
+            'roomName': 'Bathroom 2',
+            'height': 200,
+            'width': 150,
+            'posX': 0,
+            'posY': 150,
+            'light': 0,
+            'music': 0,
+            'temp': 21,
+            'blinding' : false
+          },
+          {
+            'id': 18,
+            'roomName': 'Storage',
+            'height': 150,
+            'width': 150,
+            'posX': 0,
+            'posY': 350,
+            'light': 0,
+            'music': 0,
+            'temp': 21,
+            'blinding' : false
+          },
+          {
+            'id': 19,
+            'roomName': 'Master Bedroom',
+            'height': 400,
+            'width': 400,
+            'posX': 150,
+            'posY': 0,
+            'light': 0,
+            'music': 0,
+            'temp': 21,
+            'blinding' : false
+          },
+          {
+            'id': 20,
+            'roomName': 'Hallway 3',
+            'height': 100,
+            'width': 300,
+            'posX': 150,
+            'posY': 400,
+            'light': 0,
+            'music': 0,
+            'temp': 21,
+            'blinding' : false
+          },
+          {
+            'id': 21,
+            'roomName': 'Stairs 2',
+            'height': 100,
+            'width': 100,
+            'posX': 450,
+            'posY': 400,
+            'light': 0,
+            'music': 0,
+            'temp': 21,
+            'blinding' : false
+          }
+        ]
       }
     ];
 
-    // return {rooms};
     return {floors};
   }
 }

@@ -12,15 +12,15 @@ export class RoomService {
 
   constructor(private http: HttpClient) { }
 
-  public getRooms(): Observable<Room[]> {
+  /*public getRooms(): Observable<Room[]> {
     return this.http.get<Room[]>(this.roomsUrl);
-  }
+  }*/
 
   public getFloors(): Observable<Floor[]> {
     return this.http.get<Floor[]>(this.floorsUrl);
   }
 
-  public getRoom(id: number): Observable<Room> {
+  /*public getRoom(id: number): Observable<Room> {
     const url = `${this.roomsUrl}/${id}`;
     return this.http.get<Room>(url);
   }
@@ -28,5 +28,5 @@ export class RoomService {
   public getFloor(id: number): Observable<Floor> {
     let url = 'api/floors/?id=${id}';
     return this.http.get<Floor>(url);
-  }
+  }*/
 }
