@@ -2,7 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
-import {MatDialogModule, MatButtonModule, MatCardModule, MatSlideToggleModule, MatSliderModule} from '@angular/material';
+import {MatDialogModule,
+  MatButtonModule,
+  MatCardModule,
+  MatSlideToggleModule,
+  MatSliderModule,
+  MatSidenavModule,
+  MatCheckboxModule,
+  MatToolbarModule
+} from '@angular/material'
 
 import { AppComponent } from './app.component';
 import { RoomComponent } from './components/room/room.component';
@@ -46,6 +54,11 @@ const appRoutes: Routes = [
     MatDialogModule,
     MatButtonModule,
     MatCardModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSidenavModule,
+    MatCheckboxModule,
+    MatToolbarModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService),
@@ -53,8 +66,6 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes, {enableTracing: true}
     ),
-    MatSliderModule,
-    MatSlideToggleModule,
     FormsModule,
     ReactiveFormsModule
   ],

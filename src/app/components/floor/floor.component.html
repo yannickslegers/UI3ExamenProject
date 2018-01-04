@@ -1,21 +1,69 @@
 <!--
 <section class="toolbar">
-  <app-toolbar
-    [floorName] = "floorName"
-    (previous)="previousFloor()"
-    (next)="nextFloor()">
-  </app-toolbar>
-</section>
--->
-<section class="toolbar">
+  <div class="sidenav">
+    <mat-sidenav-container>
+
+      <mat-sidenav #sidenav mode="over" [(opened)]="opened">
+        <p><button mat-button (click)="sidenav.toggle()">Close</button></p>
+      </mat-sidenav>
+
+      <mat-sidenav-content>
+        <p><button mat-button (click)="sidenav.toggle()">Settings</button></p>
+      </mat-sidenav-content>
+
+    </mat-sidenav-container>
+  </div>
+
   <div>
+
     <button [routerLink] = "['/domotica/floor', previousFloor()]"><</button>
     <span class="floorName">{{floorName}}</span>
     <button [routerLink] = "['/domotica/floor', nextFloor()]">></button>
+
   </div>
 </section>
+
 <section class="floor">
   <app-room *ngFor="let room of rooms"
             [room] = "room"
   ></app-room>
 </section>
+-->
+
+<ng-container>
+  <mat-toolbar color="primary">
+    <p><button mat-button (click)="sidenav.toggle()">Settings</button></p>
+    <div>
+      <button [routerLink] = "['/domotica/floor', previousFloor()]"><</button>
+      <span class="floorName">{{floorName}}</span>
+      <button [routerLink] = "['/domotica/floor', nextFloor()]">></button>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+
+    <mat-sidenav #sidenav mode="over" class="settings-sidenav"
+                 [fixedInViewport]="false">
+      <p><button mat-button (click)="sidenav.toggle()">Close</button></p>
+
+      <!-- app-settings -->
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <section class="floor">
+        <app-room *ngFor="let room of rooms"
+                  [room] = "room"
+        ></app-room>
+      </section>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+
+  <mat-toolbar color="primary">
+    Footer
+  </mat-toolbar>
+</ng-container>
+
+

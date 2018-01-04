@@ -15,11 +15,24 @@
 }
 
 .toolbar{
-  position: absolute;
-  left: 500px;
-  top:50px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: flex-start;
 }
 
-.floorName{
-
+.sidenav{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 150px;
+}
+.floorUpDown{
+  position: absolute;
+  left: 500px;
+  top: 50px;
 }
