@@ -9,7 +9,7 @@ import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
         <button (click)="next.emit();">></button>
     </div>
         `,
-  styleUrls: ['./toolbar.component.css']
+  styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
 

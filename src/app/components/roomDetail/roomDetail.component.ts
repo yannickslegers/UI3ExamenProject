@@ -5,7 +5,7 @@ import {Room} from '../../model/room';
 @Component({
   selector: 'app-room-detail',
   templateUrl: './roomDetail.component.html',
-  styleUrls: ['./roomDetail.component.css']
+  styleUrls: ['./roomDetail.component.scss']
 })
 export class MyDialogComponent implements OnInit {
   test: Room = null;

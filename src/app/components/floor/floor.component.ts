@@ -7,7 +7,7 @@ import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-floor',
   templateUrl: './floor.component.html',
-  styleUrls: ['./floor.component.css']
+  styleUrls: ['./floor.component.scss']
 })
 export class FloorComponent implements OnInit {
   private rooms: Room[] = [];
