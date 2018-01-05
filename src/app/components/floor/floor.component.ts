@@ -44,7 +44,9 @@ export class FloorComponent implements OnInit {
             }
           );
       });
-    this.weather = this.weatherService.getWeatherData();
+    console.log('probeert op te halen');
+
+    // TODO: laten subscriben op de weatherservice
   }
 
   setFloor(id: number) {
