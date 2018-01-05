@@ -3,6 +3,8 @@ import {Room} from '../../model/room';
 import {Floor} from '../../model/floor';
 import {RoomService} from '../../services/room.service';
 import {ActivatedRoute} from '@angular/router';
+import {WeatherService} from '../../services/weather.service';
+import {Weather} from '../../model/Weather';
 
 @Component({
   selector: 'app-floor',
@@ -14,6 +16,7 @@ export class FloorComponent implements OnInit {
   private currentFloor: Floor;
   private floors: Floor[] = [];
   private floorName = '';
+  private weather: Weather;
 
   private showTemperature = true;
   private showMusic = true;
@@ -21,7 +24,7 @@ export class FloorComponent implements OnInit {
   private showBlinding = true;
   private showOutsideTemperature = true;
 
-  constructor(private roomService: RoomService, private route: ActivatedRoute) { }
+  constructor(private roomService: RoomService, private weatherService: WeatherService, private route: ActivatedRoute) { }
 
 
   ngOnInit() {
@@ -41,6 +44,7 @@ export class FloorComponent implements OnInit {
             }
           );
       });
+    this.weather = this.weatherService.getWeatherData();
   }
 
   setFloor(id: number) {

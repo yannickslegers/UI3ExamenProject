@@ -65,6 +65,17 @@
                   [showLight]="showLight"
         ></app-room>
       </section>
+      <section>
+        <div>
+          <p>{{weather.location}}</p>
+          <img src={{weather.weatherIcon}}>
+          <p>{{weather.weatherValue}}</p>
+          <p>{{weather.temp}}°C</p>
+          <p>{{weather.time}}PM</p>
+          <p>{{weather.windDirection}}</p>
+          <p>{{weather.windSpeed}}</p>
+        </div>
+      </section>
     </mat-sidenav-content>
 
   </mat-sidenav-container>

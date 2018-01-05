@@ -11,6 +11,7 @@ import {Settings} from '../../model/settings';
 export class MyDialogComponent implements OnInit {
   private room: Room = null;
   private settings: Settings = null;
+
   constructor(public thisDialogRef: MatDialogRef<MyDialogComponent>,
               @Inject(MAT_DIALOG_DATA) private data) {
     thisDialogRef.disableClose = true;
@@ -45,3 +46,4 @@ export class MyDialogComponent implements OnInit {
     return musicIcon;
   }
 }
+

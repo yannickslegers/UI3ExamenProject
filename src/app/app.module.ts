@@ -9,8 +9,10 @@ import {MatDialogModule,
   MatSliderModule,
   MatSidenavModule,
   MatCheckboxModule,
-  MatToolbarModule
-} from '@angular/material'
+  MatToolbarModule,
+  MatIconModule,
+  MatInputModule
+} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { RoomComponent } from './components/room/room.component';
@@ -21,8 +23,7 @@ import {RoomService} from './services/room.service';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {HttpClientModule} from '@angular/common/http';
 import {InMemoryDataService} from './services/in-memory-data.service';
-
-import {MatIconModule} from '@angular/material';
+import {WeatherService} from './services/weather.service';
 
 import {RouterModule, Routes} from '@angular/router';
 
@@ -60,6 +61,7 @@ const appRoutes: Routes = [
     MatCheckboxModule,
     MatToolbarModule,
     HttpClientModule,
+    MatInputModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService),
     MatIconModule,
@@ -70,7 +72,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule
   ],
   entryComponents: [MyDialogComponent],
-  providers: [RoomService],
+  providers: [RoomService, WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
