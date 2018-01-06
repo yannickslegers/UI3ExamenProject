@@ -18,7 +18,6 @@ export class FloorComponent implements OnInit {
   private floors: Floor[] = [];
   private floorName = '';
   private weather: Weather;
-  private weatherData = '';
 
   private showTemperature = true;
   private showMusic = true;

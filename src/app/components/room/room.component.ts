@@ -31,7 +31,6 @@ export class RoomComponent implements OnInit {
       // TODO: put width into scss file
       width: '600px',
       data: {room: this.room, settings: this.settings}
-      // TODO: pass settings to dialog (showTemperature, showMusic, showLight, showBlinding)
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -42,12 +41,11 @@ export class RoomComponent implements OnInit {
     });
   }
 
-  // TODO: when temperature is disabled, change room color to white
   getRoomColor(): string {
     if ( this.room.blinding === true) {
       return 'grey';
     }
-    if (this.room.light === 0) {
+    if (this.room.light === 0 || !this.showTemperature) {
       return 'white';
     }
     return 'rgba(255,255,0,' + this.room.light * 2 / 100 + ')';
