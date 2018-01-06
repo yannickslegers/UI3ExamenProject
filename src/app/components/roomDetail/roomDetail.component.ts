@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {Room} from '../../model/room';
 import {Settings} from '../../model/settings';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-room-detail',
@@ -11,6 +12,8 @@ import {Settings} from '../../model/settings';
 export class MyDialogComponent implements OnInit {
   private room: Room = null;
   private settings: Settings = null;
+  myForm: FormGroup;
+  roomName: FormControl;
 
   constructor(public thisDialogRef: MatDialogRef<MyDialogComponent>,
               @Inject(MAT_DIALOG_DATA) private data) {
@@ -20,6 +23,8 @@ export class MyDialogComponent implements OnInit {
   ngOnInit() {
     this.room = new Room(this.data.room);
     this.settings = this.data.settings;
+    this.createFormControl();
+    this.createForm();
   }
 
   getRoomColor(): string {
@@ -44,6 +49,15 @@ export class MyDialogComponent implements OnInit {
       musicIcon = 'fa fa-volume-up';
     }
     return musicIcon;
+  }
+
+  createFormControl() {
+    this.roomName = new FormControl('', Validators.required);
+  }
+  createForm() {
+    this.myForm = new FormGroup({
+      roomName: this.roomName
+    });
   }
 }
 

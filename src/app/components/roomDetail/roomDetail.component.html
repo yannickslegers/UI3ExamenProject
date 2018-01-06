@@ -1,6 +1,24 @@
 <div>
-  <h2 mat-dialog-title><strong>Settings</strong> - {{room?.roomName}}</h2>
-  <hr>
+  <!--<h2 mat-dialog-title><strong>Settings</strong> - {{room?.roomName}}</h2>
+  <hr>-->
+  <form novalidate [formGroup]="myForm">
+    <div class="form-group"
+         [ngClass]="{
+         'had-danger': roomName.invalid && (roomName.dirty || roomName.touched)
+         }"
+    >
+     <label>Settings - </label>
+      <input type="text"
+             class="form-control"
+             formControlName="roomName"
+             value="{{room.roomName}}"
+             required>
+      <div class="form-control-feedback"
+           *ngIf="roomName.errors && (roomName.dirty || roomName.touched)">
+        <p *ngIf="roomName.errors">Room Name is required</p>
+      </div>
+    </div>
+  </form>
   <mat-dialog-content>
     <br>
     <div class="container">
