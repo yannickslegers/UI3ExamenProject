@@ -17,7 +17,7 @@ export class FloorComponent implements OnInit {
   private currentFloor: Floor;
   private floors: Floor[] = [];
   private floorName = '';
-  private weather: Weather;
+  private weather = new Weather(null, null, null, null, null, null, null);
 
   private showTemperature = true;
   private showMusic = true;
