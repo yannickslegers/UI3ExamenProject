@@ -17,14 +17,13 @@ export class FloorComponent implements OnInit {
   private floors: Floor[] = [];
   private floorName = '';
   private weather: Weather;
+  private weatherData;
 
   private showTemperature = true;
   private showMusic = true;
   private showLight = true;
   private showBlinding = true;
   private showOutsideTemperature = true;
-
-  private weatherObservable;
 
   constructor(private roomService: RoomService, private weatherService: WeatherService, private route: ActivatedRoute) { }
 
@@ -47,7 +46,19 @@ export class FloorComponent implements OnInit {
           );
       });
     // TODO: laten subscriben op de weatherservice
-    this.weatherService.getWeatherData().subscribe(res => {console.log(res); });
+    this.weatherService.getWeatherData().subscribe(data => {
+      console.log(data);
+      this.weather = new Weather(
+        data.data.request[0].query,
+        data.data.current_condition[0].observation_time,
+        data.data.current_condition[0].temp_C,
+        data.data.current_condition[0].weatherIconUrl[0].value,
+        data.data.current_condition[0].weatherDesc[0].value,
+        data.data.current_condition[0].windspeedKmph,
+        data.data.current_condition[0].winddir16point
+      );
+      console.log(data.data.request[0].query);
+    });
 
 
   }
