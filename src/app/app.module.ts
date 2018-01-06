@@ -63,7 +63,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     MatInputModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService),
+      InMemoryDataService, {passThruUnknownUrl: true, dataEncapsulation: false}),
     MatIconModule,
     RouterModule.forRoot(
       appRoutes, {enableTracing: true}

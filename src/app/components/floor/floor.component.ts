@@ -24,6 +24,8 @@ export class FloorComponent implements OnInit {
   private showBlinding = true;
   private showOutsideTemperature = true;
 
+  private weatherObservable;
+
   constructor(private roomService: RoomService, private weatherService: WeatherService, private route: ActivatedRoute) { }
 
 
@@ -44,9 +46,10 @@ export class FloorComponent implements OnInit {
             }
           );
       });
-    console.log('probeert op te halen');
-
     // TODO: laten subscriben op de weatherservice
+    this.weatherService.getWeatherData().subscribe(res => {console.log(res); });
+
+
   }
 
   setFloor(id: number) {
