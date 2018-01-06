@@ -65,15 +65,16 @@
                   [showLight]="showLight"
         ></app-room>
       </section>
-      <section>
+      <section class="currentWeather" *ngIf="showOutsideTemperature">
         <div>
+          <h3>Current weather conditions</h3>
+          <p>{{weather.time}} GMT</p>
           <p>{{weather.location}}</p>
           <img src={{weather.weatherIcon}}>
           <p>{{weather.weatherValue}}</p>
           <p>{{weather.temp}}°C</p>
-          <p>{{weather.time}}</p>
-          <p>{{weather.windDirection}}</p>
-          <p>{{weather.windSpeed}}</p>
+          <p>Wind: {{weather.windDirection}}</p>
+          <p>Wind speed: {{weather.windSpeed}} kmph</p>
         </div>
       </section>
     </mat-sidenav-content>

@@ -5,6 +5,7 @@ import {RoomService} from '../../services/room.service';
 import {ActivatedRoute} from '@angular/router';
 import {WeatherService} from '../../services/weather.service';
 import {Weather} from '../../model/Weather';
+import {IntervalObservable} from 'rxjs/observable/IntervalObservable';
 
 @Component({
   selector: 'app-floor',
@@ -17,7 +18,7 @@ export class FloorComponent implements OnInit {
   private floors: Floor[] = [];
   private floorName = '';
   private weather: Weather;
-  private weatherData;
+  private weatherData = '';
 
   private showTemperature = true;
   private showMusic = true;
@@ -29,6 +30,9 @@ export class FloorComponent implements OnInit {
 
 
   ngOnInit() {
+    /*
+    * Getting data of floor respectively to the route parameter
+    * */
     this.route.paramMap
       .subscribe(
         params => {
@@ -45,7 +49,10 @@ export class FloorComponent implements OnInit {
             }
           );
       });
-    // TODO: laten subscriben op de weatherservice
+    /*
+    * Getting actual weather data every +- 10 min (600000)
+    * */
+    // TODO: data om de 10 min ophalen
     this.weatherService.getWeatherData().subscribe(data => {
       console.log(data);
       this.weather = new Weather(
@@ -55,12 +62,24 @@ export class FloorComponent implements OnInit {
         data.data.current_condition[0].weatherIconUrl[0].value,
         data.data.current_condition[0].weatherDesc[0].value,
         data.data.current_condition[0].windspeedKmph,
-        data.data.current_condition[0].winddir16point
+        data.data.current_condition[0].winddir16Point
       );
-      console.log(data.data.request[0].query);
     });
-
-
+    IntervalObservable.create(600000)
+      .subscribe(() => {
+        this.weatherService.getWeatherData().subscribe(data => {
+          console.log(data);
+          this.weather = new Weather(
+            data.data.request[0].query,
+            data.data.current_condition[0].observation_time,
+            data.data.current_condition[0].temp_C,
+            data.data.current_condition[0].weatherIconUrl[0].value,
+            data.data.current_condition[0].weatherDesc[0].value,
+            data.data.current_condition[0].windspeedKmph,
+            data.data.current_condition[0].winddir16point
+          );
+        });
+      });
   }
 
   setFloor(id: number) {
