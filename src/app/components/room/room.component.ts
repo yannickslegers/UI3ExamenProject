@@ -45,7 +45,7 @@ export class RoomComponent implements OnInit {
     if ( this.room.blinding === true) {
       return 'grey';
     }
-    if (this.room.light === 0 || !this.showTemperature) {
+    if (this.room.light === 0 || !this.showLight) {
       return 'white';
     }
     return 'rgba(255,255,0,' + this.room.light * 2 / 100 + ')';

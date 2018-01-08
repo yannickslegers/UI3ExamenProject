@@ -53,7 +53,6 @@ export class FloorComponent implements OnInit {
     * */
     // TODO: data om de 10 min ophalen
     this.weatherService.getWeatherData().subscribe(data => {
-      console.log(data);
       this.weather = new Weather(
         data.data.request[0].query,
         data.data.current_condition[0].observation_time,

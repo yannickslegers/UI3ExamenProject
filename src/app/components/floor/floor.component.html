@@ -33,10 +33,14 @@
 <ng-container>
   <mat-toolbar class="header" color="primary">
     <p><button mat-button (click)="sidenav.toggle()">Settings</button></p>
-    <div>
-      <button [routerLink] = "['/domotica/floor', previousFloor()]"><</button>
+    <div class="floorChanger">
+      <button [routerLink] = "['/domotica/floor', previousFloor()]">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </button>
       <span class="floorName">{{floorName}}</span>
-      <button [routerLink] = "['/domotica/floor', nextFloor()]">></button>
+      <button [routerLink] = "['/domotica/floor', nextFloor()]">
+        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+      </button>
     </div>
   </mat-toolbar>
 
@@ -83,7 +87,6 @@
 
 
   <mat-toolbar class="footer" color="primary">
-    Footer
   </mat-toolbar>
 </ng-container>
 
