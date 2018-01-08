@@ -42,13 +42,7 @@ export class MyDialogComponent implements OnInit {
   }
 
   getMusic(): string {
-    let musicIcon;
-    if (this.room.music === 0) {
-      musicIcon = 'fa fa-volume-off';
-    } else {
-      musicIcon = 'fa fa-volume-up';
-    }
-    return musicIcon;
+    return this.room.music === 0 ? 'fa fa-volume-off' : 'fa fa-volume-up';
   }
 
   createFormControl() {

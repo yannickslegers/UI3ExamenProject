@@ -11,15 +11,11 @@ import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
         `,
   styleUrls: ['./toolbar.component.scss']
 })
-export class ToolbarComponent implements OnInit {
+export class ToolbarComponent{
 
   @Input() public floorName: string;
   @Output() public previous: EventEmitter<any> = new EventEmitter();
   @Output() public next: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }

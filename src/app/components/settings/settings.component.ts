@@ -5,7 +5,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss']
 })
-export class SettingsComponent implements OnInit {
+export class SettingsComponent{
 
   @Output() public showTemperature: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() public showLight: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -14,8 +14,4 @@ export class SettingsComponent implements OnInit {
   @Output() public showOutsideTemperature: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }

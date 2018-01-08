@@ -9,7 +9,7 @@ import {Settings} from '../../model/settings';
   templateUrl: './room.component.html',
   styleUrls: ['./room.component.scss']
 })
-export class RoomComponent implements OnInit {
+export class RoomComponent{
   private settings;
 
   @Input() public room: Room = {id: 0, height: 0, width: 0, posX: 0, posY: 0, light: 0, music: 0, temp: 0, roomName: '', blinding : false};
@@ -21,9 +21,6 @@ export class RoomComponent implements OnInit {
 
 
   constructor(public dialog: MatDialog) { }
-
-  ngOnInit() {
-  }
 
   openDialog() {
     this.settings = new Settings(this.showTemperature, this.showMusic, this.showLight, this.showBlinding);
@@ -52,12 +49,6 @@ export class RoomComponent implements OnInit {
   }
 
   getMusic(): string {
-    let musicIcon;
-    if (this.room.music === 0) {
-      musicIcon = 'fa fa-volume-off';
-    } else {
-      musicIcon = 'fa fa-volume-up';
-    }
-    return musicIcon;
+    return this.room.music === 0 ? 'fa fa-volume-off' : 'fa fa-volume-up';
   }
 }
