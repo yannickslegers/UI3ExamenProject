@@ -11,7 +11,7 @@
       <input type="text"
              class="form-control"
              formControlName="roomName"
-             [value]="room.roomName"
+             [(ngModel)]="room.roomName"
              required>
       <div class="form-control-feedback"
            *ngIf="roomName.errors && (roomName.dirty || roomName.touched)">
